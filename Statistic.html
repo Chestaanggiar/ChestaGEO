@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<marquee>Start To Learn New Knowledge With Us!</marquee>
+</body>
+
+<body>
+  <header>
+		<h1>GEOGRAPHY EDUCATION</h1> 
+  </header>
+  
+  <menu>
+    <a href="index.html">Home</a>
+    <a href="ketiga.html">Spasial</a>
+    <a href="Statistic.html">Spatial Analisis</a>
+    <a href="UniqueDestination.html">Destination</a>
+    <a href="AboutUs.html">About</a> 
+  </menu>
+  <center>
+  <h3>Data Statistik Perubahan Penggunaan Lahan Wilayah Kec. Gresik, Kebomas, dan Cerme Kabupaten Gresik, Jawa Timur Indonesia</h3>
+  </center>
+
+  <center>
+  <body>
+    <div style="width: 80%; margin: auto;">
+      <canvas id="perubahanLahanChart"></canvas>
+  </div>
+  <script type="text/javascript">
+    // Data perubahan penggunaan lahan
+    var dataPerubahanLahan = [
+       { jenis: 'Permukiman', pl2019: 12, pl2023: 10 },
+       { jenis: 'Bangunan', pl2019: 5, pl2023: 12 },
+       { jenis: 'Ladang', pl2019: 1, pl2023:  2 },
+       { jenis: 'Sawah', pl2019: 1, pl2023: 0 },
+       { jenis: 'Lahan Terbuka', pl2019: 1, pl2023: 1 },
+       { jenis: 'Kebun', pl2019: 1, pl2023: 1 },
+       { jenis: 'Empang', pl2019: 8, pl2023: 0 },
+       { jenis: 'Perumahan padat teratur', pl2019: 1, pl2023: 4 }
+       
+   ];
+
+   // Inisialisasi chart
+   var ctx = document.getElementById('perubahanLahanChart').getContext('2d');
+   var perubahanLahanChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: dataPerubahanLahan.map(item => item.jenis),
+           datasets: [{
+               label: 'PL 2019',
+               backgroundColor: 'rgb(255, 160, 122)',
+               borderColor: 'rgba(75, 192, 192, 1)',
+               borderWidth: 1,
+               data: dataPerubahanLahan.map(item => item.pl2019)
+           }, {
+               label: 'PL 2023',
+               backgroundColor: 'rgba(152, 251, 152)',
+               borderColor: 'rgba(255, 99, 132, 1)',
+               borderWidth: 1,
+               data: dataPerubahanLahan.map(item => item.pl2023)
+           }]
+       },
+       options: {
+           scales: {
+               y: {
+                   beginAtZero: true
+               }
+           }
+       }
+   });
+</script>
+
+
+  </body>
+  </center>
+  <footer>
+		<p>Oleh Chesta -2023</p>
+  </footer>
+ </body>
+ 
+ 
+ </html>
